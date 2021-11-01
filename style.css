@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+}
+
+main {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr 0.25fr;
+  grid-auto-rows: 75px;
+}
+main > * {
+  display: flex;
+  align-items: center;
+}
+.jokeItem {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  height: 100%;
+  background-color: blue;
+}
+.deleteItem {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  background-color: brown;
+  height: 100%;
+}
