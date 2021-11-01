@@ -31,3 +31,6 @@ main > * {
   height: 100%;
   justify-content: center;
 }
+.deleteItem i {
+  color: red;
+}
