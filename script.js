@@ -23,6 +23,6 @@ jokeItem.addEventListener("touchend", (e) => {
   if (touchCordinateEnd < touchCordinateStart - deleteButtonWidth / 2) {
     jokeItem.style.transform = `translateX(-${deleteButtonWidth}px)`;
   } else {
-    jokeItem.style.transform = `translateX(0)`;
+    jokeItem.style.transform = `translateX(${e.target.offsetLeft})`;
   }
 });
