@@ -1,8 +1,15 @@
-const jokeItem = document.querySelector(".jokeItem");
+let jokeItem = document.querySelector(".jokeItem");
 let touchCordinateStart;
 let touchCordinateMove;
 let touchCordinateEnd;
 let deleteButtonWidth = (window.screen.width * 40) / 100;
+
+document.querySelector(".deleteItem").addEventListener("click", () => {
+  document.querySelector("main").classList.add("animate__fadeOutLeft");
+  setTimeout(() => {
+    document.querySelector("main").remove();
+  }, 800);
+});
 
 jokeItem.addEventListener("touchstart", (e) => {
   touchCordinateStart = e.touches[0].clientX;
