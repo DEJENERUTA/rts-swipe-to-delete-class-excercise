@@ -5,10 +5,13 @@ let touchCordinateEnd;
 let deleteButtonWidth = (window.screen.width * 40) / 100;
 
 document.querySelector(".deleteItem").addEventListener("click", () => {
-  document.querySelector("main").classList.add("animate__fadeOutLeft");
+  document.querySelector("section").classList.add("animate__fadeOutLeft");
   setTimeout(() => {
-    document.querySelector("main").remove();
+    document.querySelector("section").classList.add("collapsed");
   }, 800);
+  setTimeout(() => {
+    document.querySelector("section").remove();
+  }, 900);
 });
 
 jokeItem.addEventListener("touchstart", (e) => {

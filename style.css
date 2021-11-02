@@ -2,16 +2,26 @@ body {
   margin: 0;
 }
 
-main {
+section {
   box-sizing: border-box;
   display: grid;
   grid-template-columns: 1fr 40%;
   grid-auto-rows: 75px;
 }
-main > * {
+section > * {
   display: flex;
   align-items: center;
   padding: 5px;
+}
+section {
+  height: 75px;
+  display: grid;
+  grid-template-columns: 1fr 40%;
+  grid-auto-rows: 75px;
+  transition: height 0.15s ease;
+}
+.collapsed {
+  height: 0;
 }
 .jokeItem {
   grid-column-start: 1;
