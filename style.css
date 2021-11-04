@@ -1,24 +1,17 @@
 body {
   margin: 0;
 }
-
-section {
-  box-sizing: border-box;
-  display: grid;
-  grid-template-columns: 1fr 40%;
-  grid-auto-rows: 75px;
-}
-section > * {
-  display: flex;
-  align-items: center;
-  padding: 5px;
-}
 section {
   height: 75px;
   display: grid;
   grid-template-columns: 1fr 40%;
   grid-auto-rows: 75px;
   transition: height 0.15s ease;
+}
+section > * {
+  display: flex;
+  align-items: center;
+  padding: 5px;
 }
 .collapsed {
   height: 0;
@@ -29,8 +22,9 @@ section {
   grid-row-start: 1;
   grid-row-end: 2;
   height: 100%;
-  background-color: rgb(160, 160, 216);
   transition: 0.15s;
+  background-color: rgb(160, 160, 216);
+  border-bottom: 2px solid chocolate;
 }
 .deleteItem {
   grid-column-start: 2;
