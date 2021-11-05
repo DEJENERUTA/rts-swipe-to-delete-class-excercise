@@ -1,6 +1,23 @@
 body {
   margin: 0;
 }
+nav {
+  background-color: blue;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+nav i {
+  color: red;
+  font-size: 30px;
+  margin-left: 10px;
+}
+h1 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 24px;
+  color: #fff;
+}
 section {
   height: 75px;
   display: grid;
@@ -15,7 +32,7 @@ section > * {
 .collapsed {
   height: 0;
 }
-.jokeItem {
+.swipeItem {
   grid-column-start: 1;
   grid-column-end: 3;
   grid-row-start: 1;

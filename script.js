@@ -1,22 +1,19 @@
-let jokeItem = document.querySelector(".jokeItem");
+let swipeItem = document.querySelector(".swipeItem");
 let touchCordinateStart;
 let touchCordinateMove;
 let touchCordinateEnd;
 let deleteButtonWidth = (window.screen.width * 40) / 100;
-/* console.log(deleteButtonWidth); */
 let touchParentElement;
 let touchElement;
 let deleteStorage = window.localStorage;
-/* let deleteIcon; */
+let trash = [];
 
 document.querySelector("main").addEventListener("touchstart", (e) => {
-  /*  console.log("touchstart"); */
   touchParentElement = e.target.parentElement;
   touchElement = e.target;
   touchCordinateStart = e.touches[0].clientX;
 
   touchElement.addEventListener("touchmove", (e) => {
-    /*  console.log("touchmove"); */
     touchCordinateMove = Math.floor(e.touches[0].clientX);
 
     if (
@@ -30,7 +27,6 @@ document.querySelector("main").addEventListener("touchstart", (e) => {
   });
 
   touchElement.addEventListener("touchend", (e) => {
-    /*  console.log("touchend"); */
     touchCordinateEnd = Math.floor(e.changedTouches[0].clientX);
     if (touchCordinateEnd < touchCordinateStart - deleteButtonWidth / 2) {
       touchElement.style.transform = `translateX(-${deleteButtonWidth}px)`;
@@ -42,6 +38,13 @@ document.querySelector("main").addEventListener("touchstart", (e) => {
   touchParentElement
     .querySelector(".deleteItem")
     .addEventListener("click", (e) => {
+      let userObject = {
+        id: touchParentElement.id,
+        name: touchParentElement.querySelector(".swipeItem").textContent,
+      };
+      trash.push(userObject);
+      console.log(trash);
+      localStorage.setItem(`${userObject.id}`, JSON.stringify(trash));
       touchParentElement = e.target.parentElement;
       touchElement = e.target;
       touchParentElement.classList.add("animate__fadeOutLeft");
@@ -53,25 +56,3 @@ document.querySelector("main").addEventListener("touchstart", (e) => {
       }, 900);
     });
 });
-
-/* parentElement.classList.add("animate__fadeOutLeft");
-setTimeout(() => {
-  document.querySelector("section").classList.add("collapsed");
-}, 800);
-setTimeout(() => {
-  document.querySelector("section").remove();
-}, 900); */
-
-/* document.querySelector(".deleteItem").addEventListener("click", () => {
-  document.querySelector("section").classList.add("animate__fadeOutLeft");
-  setTimeout(() => {
-    document.querySelector("section").classList.add("collapsed");
-  }, 800);
-  setTimeout(() => {
-    document.querySelector("section").remove();
-  }, 900);
-});
-
-jokeItem.addEventListener("touchstart", (e) => {
-  touchCordinateStart = e.touches[0].clientX;
-}); */

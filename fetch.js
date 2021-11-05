@@ -14,12 +14,12 @@ axios.get("https://jsonplaceholder.typicode.com/users/").then((response) => {
     deleteIcon.classList.add("fa-trash");
     deleteItem.appendChild(deleteIcon);
 
-    const jokeItem = document.createElement("article");
-    jokeItem.classList.add("jokeItem");
-    jokeItem.textContent = user.name;
+    const swipeItem = document.createElement("article");
+    swipeItem.classList.add("swipeItem");
+    swipeItem.textContent = user.name;
 
     section.appendChild(deleteItem);
-    section.appendChild(jokeItem);
+    section.appendChild(swipeItem);
     main.appendChild(section);
   });
 });
