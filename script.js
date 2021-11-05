@@ -3,8 +3,11 @@ let touchCordinateStart;
 let touchCordinateMove;
 let touchCordinateEnd;
 let deleteButtonWidth = (window.screen.width * 40) / 100;
+/* console.log(deleteButtonWidth); */
 let touchParentElement;
 let touchElement;
+let deleteStorage = window.localStorage;
+/* let deleteIcon; */
 
 document.querySelector("main").addEventListener("touchstart", (e) => {
   /*  console.log("touchstart"); */

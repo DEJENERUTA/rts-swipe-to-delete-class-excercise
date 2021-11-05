@@ -9,8 +9,10 @@ axios.get("https://jsonplaceholder.typicode.com/users/").then((response) => {
 
     const deleteItem = document.createElement("div");
     deleteItem.classList.add("deleteItem");
-    /*  let icon;
-    deleteItem.appendChild("i"); */
+    const deleteIcon = document.createElement("i");
+    deleteIcon.classList.add("fas");
+    deleteIcon.classList.add("fa-trash");
+    deleteItem.appendChild(deleteIcon);
 
     const jokeItem = document.createElement("article");
     jokeItem.classList.add("jokeItem");
