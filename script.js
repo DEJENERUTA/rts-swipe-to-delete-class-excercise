@@ -42,9 +42,13 @@ document.querySelector("main").addEventListener("touchstart", (e) => {
         id: touchParentElement.id,
         name: touchParentElement.querySelector(".swipeItem").textContent,
       };
-      trash.push(userObject);
-      console.log(trash);
-      localStorage.setItem(`${userObject.id}`, JSON.stringify(trash));
+      if (!trash.includes(JSON.stringify(userObject))) {
+        /* bad solution, here our aray will have two value when we click */
+        trash.push(JSON.stringify(userObject));
+        console.log(trash);
+      }
+
+      localStorage.setItem(`deleteItem`, JSON.stringify(trash));
       touchParentElement = e.target.parentElement;
       touchElement = e.target;
       touchParentElement.classList.add("animate__fadeOutLeft");
